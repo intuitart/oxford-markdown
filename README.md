@@ -1,8 +1,8 @@
-# Oxford Markdown (readme.md)
+# Oxford Markdown (README)
 
 Plugin: [Oxford Markdown](https://www.oxfordframework.com/oxford-markdown)  
 Contributors: intuitart  
-Tags: gutenberg, markdown, html, parse, parsedown  
+Tags: gutenberg, classic editor, markdown, html, parse, parsedown  
 Author: [Andrew Patterson](https://www.pattersonresearch.ca/?target=_blank)  
 Plugin URL: https://www.oxfordframework.com/oxford-markdown   
 Requires at least: 5.0  
@@ -24,7 +24,7 @@ We also have a markdown shortcode that allows you to load a markdown file from a
 
 ## Usage
 
-The default usage is to convert gutenberg blocks captured as markdown into html for display.
+The default usage is to convert gutenberg blocks captured as markdown into html for display. Here are the steps:
 
 1. Install and activate the plugin.
 
@@ -34,7 +34,7 @@ The default usage is to convert gutenberg blocks captured as markdown into html 
 
 1. Update or Publish your page when finished.
 
-That's it. When you view your page, the markdown code block with the block style 'md->html' will be parsed into html from markdown.
+That's it. When you view your page, the markdown code block with the block style `md->html` will be parsed into html from markdown.
 
 Code block editors that have been tested and work include:
 - inbuilt Wordpress block code editor
@@ -51,15 +51,17 @@ Code block editors that do not work include:
 
 If a code editor is not explicitly supported, but it allows you to add custom classes, add the class `mdToHtml`. This is usually available under the **Advanced** drop down when editing a block. That's all it takes to trigger the block to have it's markdown parsed into html as it is displayed.
 
-## Alternate Usage
+## Classic Editor
 
-Blocks identified as coming from the classic editor can also be parsed as markdown. If you find yourself in one of these situations, this may be useful to you:
+Blocks identified as coming from the classic editor can also be parsed as markdown. This may be useful to you if you find yourself in one of these situations:
 
 - you have a Wordpress site where content is currently stored as Markdown
 - you want to disable Gutenberg and use the Classic Editor
 - you want to use Gutenberg and edit with the Code Editor instead of the Visual Editor
 
-1. Add one of the following to your functions.php file found in your theme folder:
+Internally Gutenberg implements all of these as a classic-editor block. To use, here are the steps:
+
+1. Add one of the following to your functions.php file in your theme folder:
 ```php
 add_filter( 'oxford-markdown-enable-legacy', '__return_true' );
 add_filter( 'oxford-markdown-controlled-legacy', '__return_true' );
@@ -76,7 +78,7 @@ Now when you view your page the entire content will be parsed into html from mar
 
 The difference between the two filters, in a nutshell, is that the first will parse all classic editor content, while the second will parse all classic editor content where the first character found is a `#` character.
 
-When using the controlled filter, and the first character in your content is not a `#` for a heading, add a single `#` all by itself on it's own line. Like this,
+When using the controlled filter, and the first character in your content is not a `#` for a heading, add a single `#` all by itself on it's own line. Like this:
 ```
 #
 Let's introduce this page with a paragraph before we have our first heading.
@@ -91,7 +93,7 @@ The following is how the above markdown code will appear after being parsed into
 
 ## Markdown URL
 
-To display markdown from an external url, we use a Wordpress shortcode. It's simple. There is the shortcode name `md_url` and your source url. Here is an example:
+To display markdown from an external url, we use a Wordpress shortcode. It's simple. You need the shortcode name `md_url` and your source url. Here is an example:
 ```
 [md_url url="https://raw.githubusercontent.com/intuitart/oxford-markdown/master/readme.md"]
 ```
@@ -117,4 +119,4 @@ becomes
 <a href="https://wordpress.org/plugins/code-editor-blocks/" target="_blank">Code Editor Blocks</a>
 ```
 
-Because it's a legitimate url parameter it passes through markdown parsers. If your html is not displayed with this plugin, the parameter will remain, but it should do no harm as websites generally ignore unexpected parameters.
+Because it's a legitimate url parameter it passes through markdown parsers. If your html is not displayed with this plugin, the parameter will remain and have no affect, but it should do no harm as websites generally ignore unexpected parameters.

@@ -4,6 +4,7 @@
  * Plugin URI:  http://oxfordframework.com
  * Description: A plugin to parse gutenberg markdown code blocks into html
  * Version:     1.0.0
+ * Date:        20 Jun 2019
  * Author:      Andrew Patterson
  * Author URI:  http://pattersonresearch.ca
  * License:     GPL-3.0+
