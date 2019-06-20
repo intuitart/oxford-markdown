@@ -6,9 +6,9 @@
  * Version:     1.0.0
  * Date:        20 Jun 2019
  * Author:      Andrew Patterson
- * Author URI:  http://pattersonresearch.ca
+ * Author URI:  https://www.pattersonresearch.ca
  * License:     GPL-3.0+
- * License URI: http://www.gnu.org/licenses/gpl-3.0.txt
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  */
 
 // abort if accessed directly
@@ -104,10 +104,6 @@ class oxford_markdown {
 
   // parse block for markdown
   public function pre_render_block( $pre_render, $block ) {
-    $debug_log = '/var/www/debug/debug.log';
-    $results = print_r( $block, true );
-    file_put_contents( $debug_log, '$block:' . PHP_EOL, FILE_APPEND );
-    file_put_contents( $debug_log, $results, FILE_APPEND );
 
     // content to parse
     if( is_null( $pre_render ) ) {
@@ -120,7 +116,7 @@ class oxford_markdown {
     $block_class = '';
 
     // legacy content, or classic editor
-    if ( empty( $blocks['blockName'] ) ) {
+    if ( empty( $block['blockName'] ) ) {
 
       // parse all legacy and classic editor content
       if ( apply_filters( 'oxford-markdown-enable-legacy', false ) ) {

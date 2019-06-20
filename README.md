@@ -4,13 +4,13 @@ Plugin: [Oxford Markdown](https://www.oxfordframework.com/oxford-markdown)
 Contributors: intuitart  
 Tags: gutenberg, classic editor, markdown, html, parse, parsedown  
 Author: [Andrew Patterson](https://www.pattersonresearch.ca/?target=_blank)  
-Plugin URL: https://www.oxfordframework.com/oxford-markdown   
+Plugin URL: [https://github.com/intuitart/oxford-markdown](https://github.com/intuitart/oxford-markdown?target=_blank)  
 Requires at least: 5.0  
 Tested up to: 5.2.1  
 Stable tag: 1.0.0  
 Version: 1.0.0  
 License: GPLv3 or later  
-License URL: http://www.gnu.org/licenses/gpl-3.0.html  
+License URL: [https://www.gnu.org/licenses/gpl-3.0.txt](https://www.gnu.org/licenses/gpl-3.0.txt?target=_blank)  
 
 Want to write in markdown? We parse Gutenberg markdown blocks into html.
 
