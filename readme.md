@@ -2,7 +2,7 @@
 
 Plugin: [Oxford Markdown](https://www.oxfordframework.com/oxford-markdown)  
 Contributors: intuitart  
-Tags: markdown, html, parse, parsedown  
+Tags: gutenberg, markdown, html, parse, parsedown  
 Author: [Andrew Patterson](https://www.pattersonresearch.ca/?target=_blank)  
 Plugin URL: https://www.oxfordframework.com/oxford-markdown   
 Requires at least: 5.0  

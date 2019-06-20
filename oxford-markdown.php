@@ -76,8 +76,8 @@ class oxford_markdown {
   // plugins_loaded action
   public function plugins_loaded() {
     if ( ! class_exists( 'Parsedown' ) ) {
-      require_once( plugin_dir_path( __FILE__ ) . 'parsedown-master/Parsedown.php');
-      require_once( plugin_dir_path( __FILE__ ) . 'parsedown-extra-master/ParsedownExtra.php');
+      require_once( plugin_dir_path( __FILE__ ) . 'vendor/parsedown/Parsedown.php');
+      require_once( plugin_dir_path( __FILE__ ) . 'vendor/parsedown-extra/ParsedownExtra.php');
     }
   }
 
