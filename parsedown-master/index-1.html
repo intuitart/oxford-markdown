@@ -1,0 +1,64 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Unknown </title></head><body>
+<!-- ![Parsedown](https://i.imgur.com/yE8afYV.png) -->
+
+<p align="center"><img alt="Parsedown" src="https://i.imgur.com/fKVY6Kz.png" width="240" /></p>
+
+<h1>Parsedown</h1>
+
+<p><a href="https://travis-ci.org/erusev/parsedown"><img alt="Build Status" src="https://travis-ci.org/erusev/parsedown.svg" /></a>
+<a href="https://packagist.org/packages/erusev/parsedown"><img alt="Total Downloads" src="https://poser.pugx.org/erusev/parsedown/d/total.svg" /></a>
+<a href="https://packagist.org/packages/erusev/parsedown"><img alt="Version" src="https://poser.pugx.org/erusev/parsedown/v/stable.svg" /></a>
+<a href="https://packagist.org/packages/erusev/parsedown"><img alt="License" src="https://poser.pugx.org/erusev/parsedown/license.svg" /></a></p>
+<p>Better Markdown Parser in PHP - <a href="http://parsedown.org/demo">Demo</a>.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>One File</li>
+<li>No Dependencies</li>
+<li><a href="http://parsedown.org/speed">Super Fast</a></li>
+<li>Extensible</li>
+<li><a href="https://help.github.com/articles/github-flavored-markdown">GitHub flavored</a></li>
+<li><a href="http://parsedown.org/tests/">Tested</a> in 5.3 to 7.3</li>
+<li><a href="https://github.com/erusev/parsedown-extra">Markdown Extra extension</a></li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>Install the <a href="https://packagist.org/packages/erusev/parsedown" title="The Parsedown package on packagist.org">composer package</a>:</p>
+<pre><code>composer require erusev/parsedown
+</code></pre>
+<p>Or download the <a href="https://github.com/erusev/parsedown/releases/latest" title="The latest release of Parsedown">latest release</a> and include <code>Parsedown.php</code></p>
+<h2 id="example">Example</h2>
+<p>```php
+$Parsedown = new Parsedown();</p>
+<p>echo $Parsedown-&gt;text('Hello <em>Parsedown</em>!'); # prints: <p>Hello <em>Parsedown</em>!</p>
+```</p>
+<p>You can also parse inline markdown only:</p>
+<p><code>php
+echo $Parsedown-&gt;line('Hello _Parsedown_!'); # prints: Hello &lt;em&gt;Parsedown&lt;/em&gt;!</code></p>
+<p>More examples in <a href="https://github.com/erusev/parsedown/wiki/">the wiki</a> and in <a href="http://youtu.be/wYZBY8DEikI">this video tutorial</a>.</p>
+<h2 id="security">Security</h2>
+<p>Parsedown is capable of escaping user-input within the HTML that it generates. Additionally Parsedown will apply sanitisation to additional scripting vectors (such as scripting link destinations) that are introduced by the markdown syntax itself.</p>
+<p>To tell Parsedown that it is processing untrusted user-input, use the following:</p>
+<p><code>php
+$Parsedown-&gt;setSafeMode(true);</code></p>
+<p>If instead, you wish to allow HTML within untrusted user-input, but still want output to be free from XSS it is recommended that you make use of a HTML sanitiser that allows HTML tags to be whitelisted, like <a href="http://htmlpurifier.org/">HTML Purifier</a>.</p>
+<p>In both cases you should strongly consider employing defence-in-depth measures, like <a href="https://scotthelme.co.uk/content-security-policy-an-introduction/">deploying a Content-Security-Policy</a> (a browser security feature) so that your page is likely to be safe even if an attacker finds a vulnerability in one of the first lines of defence above.</p>
+<h4 id="security-of-parsedown-extensions">Security of Parsedown Extensions</h4>
+<p>Safe mode does not necessarily yield safe results when using extensions to Parsedown. Extensions should be evaluated on their own to determine their specific safety against XSS.</p>
+<h2 id="escaping-html">Escaping HTML</h2>
+<blockquote>
+<p>⚠️  <strong>WARNING:</strong> This method isn't safe from XSS!</p>
+</blockquote>
+<p>If you wish to escape HTML <strong>in trusted input</strong>, you can use the following:</p>
+<p><code>php
+$Parsedown-&gt;setMarkupEscaped(true);</code></p>
+<p>Beware that this still allows users to insert unsafe scripting vectors, such as links like <code>[xss](javascript:alert%281%29)</code>.</p>
+<h2 id="questions">Questions</h2>
+<p><strong>How does Parsedown work?</strong></p>
+<p>It tries to read Markdown like a human. First, it looks at the lines. It’s interested in how the lines start. This helps it recognise blocks. It knows, for example, that if a line starts with a <code>-</code> then perhaps it belongs to a list. Once it recognises the blocks, it continues to the content. As it reads, it watches out for special characters. This helps it recognise inline elements (or inlines).</p>
+<p>We call this approach "line based". We believe that Parsedown is the first Markdown parser to use it. Since the release of Parsedown, other developers have used the same approach to develop other Markdown parsers in PHP and in other languages.</p>
+<p><strong>Is it compliant with CommonMark?</strong></p>
+<p>It passes most of the CommonMark tests. Most of the tests that don't pass deal with cases that are quite uncommon. Still, as CommonMark matures, compliance should improve.</p>
+<p><strong>Who uses it?</strong></p>
+<p><a href="https://laravel.com/">Laravel Framework</a>, <a href="http://bolt.cm/">Bolt CMS</a>, <a href="http://getgrav.org/">Grav CMS</a>, <a href="http://www.getherbie.org/">Herbie CMS</a>, <a href="http://getkirby.com/">Kirby CMS</a>, <a href="http://octobercms.com/">October CMS</a>, <a href="http://picocms.org">Pico CMS</a>, <a href="http://www.statamic.com/">Statamic CMS</a>, <a href="http://www.phpdoc.org/">phpDocumentor</a>, <a href="http://www.raspberrypi.org/">RaspberryPi.org</a>, <a href="https://github.com/symfony/demo">Symfony Demo</a> and <a href="https://packagist.org/packages/erusev/parsedown/dependents">more</a>.</p>
+<p><strong>How can I help?</strong></p>
+<p>Use it, star it, share it and if you feel generous, <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=528P3NZQMP8N2">donate</a>.</p>
+</body></html>
