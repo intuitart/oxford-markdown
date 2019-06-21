@@ -6,9 +6,10 @@ Tags: gutenberg, classic editor, markdown, html, parse, parsedown
 Author: [Andrew Patterson](https://www.pattersonresearch.ca/?target=_blank)  
 Plugin URL: [https://github.com/intuitart/oxford-markdown](https://github.com/intuitart/oxford-markdown?target=_blank)  
 Requires at least: 5.0  
-Tested up to: 5.2.1  
-Stable tag: 1.0.0  
-Version: 1.0.0  
+Tested up to: 5.2.2  
+Stable tag: 1.0.1  
+Version: 1.0.1  
+Date: 21 Jun 2019  
 License: GPLv3 or later  
 License URL: [https://www.gnu.org/licenses/gpl-3.0.txt](https://www.gnu.org/licenses/gpl-3.0.txt?target=_blank)  
 

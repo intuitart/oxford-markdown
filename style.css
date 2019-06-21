@@ -1,0 +1,7 @@
+.mdToHtml ol, .mdToHtml ul {margin-left: 2rem;}
+.mdToHtml ul {list-style: disc;}
+.mdToHtml pre {background-color: #f7f7f7; padding: 0 0.5rem;}
+.mdToHtml>pre, .mdToHtml>blockquote {margin-left: 1rem;}
+.mdToHtml pre {overflow: auto; margin-bottom: 1.25rem;}
+.mdToHtml p code {background-color: #f7f7f7;}
+.mdToHtml code {border: none; padding: 0;}
